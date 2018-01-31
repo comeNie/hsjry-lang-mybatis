@@ -1,0 +1,33 @@
+# Eclipse
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+Servers/
+**/target/
+**／.DS_Store
+**/.settings
+**/.classpath
+**/.project
+**/.externalToolBuilders
+**/.pmd
+**/.checkstyle
+**/*.bpmn2d
+settings.xml
+
+# idea
+.idea/
+**/*.iml
+
+# Others
+node_modules/
+**/MANIFEST.MF
+
+# SYSTEM_HOME
+log/
+**/jdbc.properties
+**/kafka.properties
+**/application.yml
+**/generatorConfig.properties
+
+#Jrebel
+**/rebel.xml
