@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <context id="Mysql" targetRuntime="MyBatis3">
+
+    <property name="author" value="author.name"/>
+    <property name="javaFormatter" value="com.hsjry.lang.mybatis.generator.SortImportsAndFieldsJavaFormatter"/>
+
+    <plugin type="com.hsjry.lang.mybatis.generator.plugins.MapperPlugin">
+      <property name="mappers" value="com.hsjry.lang.mybatis.mapper.common.CommonMapper,com.hsjry.lang.mybatis.mapper.common.CommonWithBlobsMapper,com.hsjry.lang.mybatis.mapper.common.CommonWithoutBlobsMapper"/>
+      <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+      <!--<property name="caseSensitive" value="true"/>-->
+    </plugin>
+
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin">
+      <property name="useToStringFromRoot" value="true"/>
+    </plugin>
+
+    <jdbcConnection driverClass="jdbc.driver"
+                    connectionURL="jdbc.url"
+                    userId="jdbc.user" password="jdbc.password">
+    </jdbcConnection>
+
+    <javaModelGenerator targetPackage="com.hsjry.market.dal.dao.model" targetProject="src/main/java"/>
+
+    <sqlMapGenerator targetPackage="com.hsjry.market.dal.dao.sqlmap" targetProject="src/main/resources"/>
+
+    <javaClientGenerator targetPackage="com.hsjry.market.dal.dao.mapper" targetProject="src/main/java"
+                         type="XMLMAPPER"/>
+
+    <table tableName="market_recommend_relation" domainObjectName="MarketRecommendRelation"/>
+  </context>
+</generatorConfiguration>

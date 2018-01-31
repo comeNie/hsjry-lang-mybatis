@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--...-->
+
+	<!-- 通过扫描的模式，扫描目录在mapper目录下，所有的mapper都继承SqlMapper接口的接口， 这样一个bean就可以了-->
+	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hsjry.market.dal.dao.mapper.**" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    <property name="properties">
+      <value>
+        mappers=com.hsjry.lang.mybatis.mapper.common.CommonMapper,com.hsjry.lang.mybatis.mapper.common.CommonWithBlobsMapper,com.hsjry.lang.mybatis.mapper.common.CommonWithoutBlobsMapper
+        columnPredicate=com.hsjry.lang.mybatis.mapper.predicate.Predicate4Column
+      </value>
+    </property>
+	</bean>
+
+  <!--...-->
+</beans>
