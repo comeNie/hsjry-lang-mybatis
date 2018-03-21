@@ -1,4 +1,17 @@
 #### hsjry mybatis插件
+
+#### Mybatis 通用Mapper介绍
+业务痛点：
+1. 想使用批量insert怎么办，手写sql？
+2. 是否想更方便的开启Mybatis二级缓存？
+介绍：
+通用Mapper可以自定义新增许多比较通用的接口，例如批量插入，selectOne(根据Example仅查出至多1条记录)，乐观锁等。使用通用Mapper后，所不需要生成大量重复的接口，针对于有代码洁癖的人是一项利好。
+#### Mybatis generator介绍
+业务痛点：
+1. 代码中生成的model、xml、mapper不可读注释
+2. 表中改字段，需要本地生成转到工程里，不麻烦吗？
+介绍：Mybatis generator是Mybatis附属项目，可以自定义生成的model、xml、mapper等代码，优化其中的注释等等，减去大量不可读的注释，简直代码洁癖者的强大利器。同时自定义一些配置，可以对代码进行格式化，相当于生成后的代码直接满足checkstyle这类检查工具的要求。
+
 #### 使用指南
 
 ##### 1. 引入该工程
